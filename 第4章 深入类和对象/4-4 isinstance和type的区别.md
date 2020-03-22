@@ -1,7 +1,7 @@
 ## type与isinstance区别：
 1. type用于求一个未知数据类型的对象，isinstance用于判断一个对象是否是已知类型；
 2. type不认为子类是父类的一种类型，isinstance认为子类是父类的一种类型，即子类对象也属于父类类型.
-```
+```python
 class A:
     pass
 

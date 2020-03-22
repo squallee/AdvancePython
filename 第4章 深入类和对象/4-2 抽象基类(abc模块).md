@@ -1,13 +1,15 @@
 ## 抽象基类
 - 抽象基类是一个虚拟的类, 相当于一个模板, 定义一些方法, 所有继承这个基类的类必须覆盖抽象基类里面的方法
 - 抽象基类是无法用来实例化的
+- 相当于Java中的interface
 
 ### 为什么要有抽象基类
+python是动态语言，变量是没有固定类型的，可以指向任何类型的对象。鸭子模型和魔法函数实际上都成了python语言的基础，Python语言不像Java一样要继承某个类或者实现某个接口才能实现功能，而是去实现某个魔法函数就可以实现特定功能。
 因为python是基于鸭子类型的, 所以其实只要实现某些方法就可以了, 那为什么还要抽象基类呢?
 - 第一种用法:我们去检查某个类是否有某一种方法
 
 某些情况之下希望判定某个对象的类型, 可以使用`hasattr`判断是否实现某方法或者使用`isinstance`(推荐)去判断一个类是否是指定的类型, `Sized`就是一个实现`__len__`的抽象基类.
-```
+```python
 class Company(object):
     def __init__(self, employee_list):
         self.employee = employee_list
@@ -41,7 +43,7 @@ print(isinstance(b, A))
 >>> True
 ```
 - 第二种用法: 强制某个子类必须实现某些方法
-```
+```python
 # 模拟抽象基类, 只有在调用set方法的时候才会抛出异常
 class CacheBase():
     def get(self, key):
@@ -79,7 +81,7 @@ redis_cache = RedisCache()
 
 ### collection.abc模块
 在这个模块中定义了很多通用的抽象基类, 比如Sized. 但是这些抽象基类定义出来并不是用来继承的, 更多的是让我们理解接口的一些定义. 推荐使用鸭子类型或者多继承(Mixin)实现, 而少用抽象基类.
-```
+```python
 __all__ = ["Awaitable", "Coroutine",
            "AsyncIterable", "AsyncIterator", "AsyncGenerator",
            "Hashable", "Iterable", "Iterator", "Generator", "Reversible",
