@@ -1,6 +1,6 @@
 ## super真正调用的是什么?
 super真正调用的是MRO中的下一个类的函数
-```
+```py
 class A:
     def __init__(self):
         print ("A")

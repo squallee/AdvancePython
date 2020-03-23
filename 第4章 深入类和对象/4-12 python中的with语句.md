@@ -1,6 +1,6 @@
 ## 上下文管理器
 ### 异常捕捉中的return
-```
+```py
 def exe_try():
     try:
         print ("code started")
@@ -27,15 +27,17 @@ print(exe_try())
 
 ## 上下文管理器协议
 with语句后面的as得到的是是__enter__方法的返回值, 如果`__enter__`返回1, 那么sample就等于1. 
-```
+```py
 class Sample:
     def __enter__(self):
         # 获取资源
         print ("enter")
         return self
+
     def __exit__(self, exc_type, exc_val, exc_tb):
         #释放资源
         print ("exit")
+        
     def do_something(self):
         print ("doing something")
 
@@ -49,7 +51,7 @@ with Sample() as sample:
 ```
 
 如果`__enter__`没有返回值, 那么无法使用as.
-```
+```py
 class Person:
     def __enter__(self):  # 获取资源
         print("enter")

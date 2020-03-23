@@ -3,7 +3,7 @@ contextmanager可以简化上下文管理器，不需要我们编写`__enter__`�
 
 其中的yield的作用，是中断当前函数执行流程，先去执行yield出去的部分的代码执行流程
 
-```
+```python
 import contextlib
 
 @contextlib.contextmanager
@@ -15,10 +15,10 @@ def file_open(file_name):
 with file_open("bobby.txt") as f_opened:
     print ("file processing")
 
-输出:
-    file open
-    file processing
-    file end
+# 输出:
+>>>file open
+>>>file processing
+>>>file end
 ```
 
 

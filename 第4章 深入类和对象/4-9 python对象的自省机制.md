@@ -3,7 +3,7 @@
 
 - \_\_dict\_\_返回的是字典, dir返回的是列表
 - \_\_dict\_\_查看对象的所有属性(可写属性), dir查看类本身的所有属性。
-```
+```python
 class Person:
     name = "Person_name"
 
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 ```
 
 ## __bases__和issubclass
-```
+```python
 class A:
     pass
 
