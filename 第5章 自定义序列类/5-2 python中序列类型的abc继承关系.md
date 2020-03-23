@@ -1,6 +1,6 @@
 ## 序列类型的协议
 和容器相关的数据结构的抽象基类都在`from collections import abc`这个模块，我们打开`from _collections_abc import all`，在`_collections_abc.py`模块里面可以看到内容如下：
-```
+```python
 __all__ = ["Awaitable", "Coroutine",
            "AsyncIterable", "AsyncIterator", "AsyncGenerator",
            "Hashable", "Iterable", "Iterator", "Generator", "Reversible",
@@ -16,14 +16,14 @@ __all__ = ["Awaitable", "Coroutine",
 
 ## Sequence
 ### Sequence 继承的类
-```
+```python
 # 继承了两个类 Reversible, Collection
 class Sequence(Reversible, Collection):
     # 抽象方法的标识，如果用他必须重写这个方法    
     @abstractmethod            
 ```
 Reversible是序列的翻转，例如ABC变成CBA
-```
+```python
 class Collection(Sized, Iterable, Container):   
     # Sized里面有魔法函数__len__,可以计算序列的长度
     # Iterable是个迭代对象, 有了它可以进行for循环
@@ -42,7 +42,7 @@ Sequence的所有魔法函数构成了序列的协议,	打开Sequence类我们�
 ## MutableSequence
 MutableSequence是可变的序列, 他继承了Sequence并新加了一些特性. 如
 setitem, delitem, insert, append, clear, reverse, extend, pop, remove, iadd等, 这些都是可变序列的特性.
-```
+```python
 class MutableSequence(Sequence):
 
     __slots__ = ()
