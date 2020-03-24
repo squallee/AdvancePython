@@ -5,7 +5,7 @@
 - 使用bisect插入数据会将数据按顺序排序(升序)
 - bisect利用二分查找来维护排序序列
 
-```
+```python
 import bisect
 
 inter_list = []
@@ -28,7 +28,7 @@ print(inter_list)
 其中默认插入是右边插入`insort = insort_right`
 
 - 查找将会插入的位置
-```
+```python
 inter_list = [1, 2, 3.0, 3, 4, 5, 6]
 print(bisect.bisect(inter_list,2.0))
 >>> 2
