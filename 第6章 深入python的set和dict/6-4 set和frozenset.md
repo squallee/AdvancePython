@@ -3,7 +3,7 @@
 - set最大的特性是不重合，在去重的时候用的最多。
 - set是无序的
 - set的性能比较高, 因为他用到了哈希编码
-```
+```python
 def __init__(self, seq=()): # known special case of set.__init__
     """
     set() -> new empty set object
@@ -20,7 +20,7 @@ set的另一种初始化方式是{'a','b','c'}
 
 ### frozenset
 不可变集合是无法修改的, 可以作为dict的key
-```
+```python
 a={"a","b","c"}
 a.add("d") # 正常
 
@@ -30,14 +30,14 @@ a.add("d") # 报错
 
 ### 常用方法
 - update 方法
-```
+```python
 a=set("abc")
 a.update("bcd") # 取的是总集
 print(a)
 >>> {'b', 'd', 'a', 'c'}
 ```
 - 集合运算(|，&，-)
-```
+```python
 a=set("abc")
 b=set("bcd")
 print(a - b) # 对a进行去重
